@@ -5,17 +5,17 @@ import intent from "./"
 
 test("Single Trigger + Multiple Actions + Parameters", ({same, end}) => {
   same(
-    intent({
+    intent(
+      {
+        field: "query",
+        form: "search",
+      }
+    )({
       change: [
         "updateFormField",
         "fetchSearchResult",
       ],
     })(
-      {
-        field: "query",
-        form: "search",
-      }
-    )(
       {
         selector: "#id.class",
         children: ["Hello, world"],

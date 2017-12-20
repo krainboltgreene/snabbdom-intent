@@ -7,9 +7,9 @@ import toIntentSubtree from "./"
 test("Singular without parameters", ({same, end}) => {
   same(
     toIntentSubtree(
-      "change"
-    )(
       {}
+    )(
+      "change"
     )([
       "fetchSearchResult",
     ]),
@@ -27,12 +27,12 @@ test("Singular without parameters", ({same, end}) => {
 test("Singular with parameters", ({same, end}) => {
   same(
     toIntentSubtree(
-      "change"
-    )(
       {
         form: "search",
         field: "query",
       }
+    )(
+      "change"
     )([
       "fetchSearchResult",
     ]),
@@ -53,9 +53,9 @@ test("Singular with parameters", ({same, end}) => {
 test("Multiple without parameters", ({same, end}) => {
   same(
     toIntentSubtree(
-      "change"
-    )(
       {}
+    )(
+      "change"
     )([
       "fetchSearchResult",
       "updateFormField",
@@ -79,12 +79,12 @@ test("Multiple without parameters", ({same, end}) => {
 test("Multiple with parameters", ({same, end}) => {
   same(
     toIntentSubtree(
-      "change"
-    )(
       {
         form: "search",
         field: "query",
       }
+    )(
+      "change"
     )([
       "fetchSearchResult",
       "updateFormField",

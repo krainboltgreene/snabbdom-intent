@@ -16,15 +16,19 @@ import intent from "snabbdom-intent"
 import {input} from "snabbdom-helpers"
 
 const searchWith = intent({
-  change: ["updateFormField", "fetchAutocomplete"],
-  submit: ["fetchSearchResults"]
-})({
   form: "search",
   field: "query"
 })
 
 export default function searchField (state) {
-  return input(searchWith({value: state.ephemeral.forms.search.query}))
+  return input(
+    searchWith({
+      change: ["updateFormField", "fetchAutocomplete"],
+      submit: ["fetchSearchResults"]
+    })(
+      {value: state.ephemeral.forms.search.query}
+    )
+  )
 }
 ```
 
